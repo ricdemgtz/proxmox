@@ -1,0 +1,35 @@
+# Configuración de ejemplo de interfaces de red
+# Este es un archivo de plantilla - ajusta según tu configuración
+
+# Loopback
+auto lo
+iface lo inet loopback
+
+# Interfaz de gestión principal
+auto eth0
+iface eth0 inet manual
+
+# Bridge principal para VMs/Containers
+auto vmbr0
+iface vmbr0 inet static
+    address 192.168.1.10/24
+    gateway 192.168.1.1
+    bridge-ports eth0
+    bridge-stp off
+    bridge-fd 0
+    # DNS
+    dns-nameservers 8.8.8.8 8.8.4.4
+
+# Bridge secundario (opcional, para red interna de VMs)
+#auto vmbr1
+#iface vmbr1 inet static
+#    address 10.0.0.1/24
+#    bridge-ports none
+#    bridge-stp off
+#    bridge-fd 0
+
+# Ejemplo de VLAN
+#auto vmbr0.10
+#iface vmbr0.10 inet static
+#    address 192.168.10.1/24
+#    vlan-raw-device vmbr0
