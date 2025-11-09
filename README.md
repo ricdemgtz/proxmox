@@ -79,6 +79,7 @@ Consulta el directorio `docs/` para documentación detallada sobre:
 - Procedimientos de respaldo y recuperación
 - Guías de troubleshooting
 - Mejores prácticas
+- Instalación de GitHub Copilot CLI (`docs/github-copilot-cli.md`)
 
 ---
 

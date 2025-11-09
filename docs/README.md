@@ -12,6 +12,7 @@ Esta carpeta contiene toda la documentación relacionada con la configuración y
 6. **security-best-practices.md** - Mejores prácticas de seguridad
 7. **vm-management.md** - Gestión de máquinas virtuales
 8. **container-management.md** - Gestión de contenedores LXC
+9. **github-copilot-cli.md** - Instalación y uso de GitHub Copilot CLI
 
 ## 🎯 Inicio Rápido
 
