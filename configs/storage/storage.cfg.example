@@ -1,0 +1,41 @@
+# Ejemplo de configuración de almacenamiento
+# /etc/pve/storage.cfg
+
+# Almacenamiento local para ISOs y templates
+dir: local
+    path /var/lib/vz
+    content iso,vztmpl,backup
+    maxfiles 3
+    shared 0
+
+# LVM-Thin local para discos de VMs
+lvmthin: local-lvm
+    thinpool data
+    vgname pve
+    content rootdir,images
+
+# Ejemplo: Almacenamiento NFS para backups
+#nfs: nfs-backup
+#    server 192.168.1.100
+#    export /mnt/pve-backup
+#    content backup,iso
+#    maxfiles 10
+
+# Ejemplo: Almacenamiento NFS para ISOs
+#nfs: nfs-iso
+#    server 192.168.1.100
+#    export /mnt/iso
+#    content iso,vztmpl
+
+# Ejemplo: CIFS/SMB
+#cifs: smb-backup
+#    server 192.168.1.100
+#    share backup
+#    content backup
+#    username backupuser
+#    # La contraseña se almacena en /etc/pve/priv/storage/<id>.pw
+
+# Ejemplo: iSCSI
+#iscsi: iscsi-storage
+#    portal 192.168.1.101
+#    target iqn.2023-01.com.example:storage

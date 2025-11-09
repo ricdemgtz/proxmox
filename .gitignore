@@ -1,0 +1,53 @@
+# Archivos sensibles / Sensitive files
+*.key
+*.pem
+*.crt
+*.password
+*.secret
+*_password.txt
+*_secret.txt
+credentials.conf
+secrets.conf
+
+# Backups locales / Local backups
+backups/*.tar
+backups/*.gz
+backups/*.bz2
+backups/*.xz
+backups/*.zip
+backups/*.vma
+backups/*.vzdump
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales / Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Datos privados / Private data
+private/
+*.private
+
+# Node modules si se usan scripts en Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+
+# Editor específico / Editor specific
+.vscode/
+.idea/
+*.sublime-*
