@@ -37,6 +37,37 @@ Script para respaldar archivos de configuración del sistema Proxmox.
 - `/etc/network/interfaces` - Configuración de red
 - Configuraciones personalizadas
 
+### pre-cluster-removal-backup.sh
+**Propósito**: Crear backup completo ANTES de eliminar y recrear un cluster Proxmox.
+
+**Uso**:
+```bash
+chmod +x pre-cluster-removal-backup.sh
+./pre-cluster-removal-backup.sh
+```
+
+**Qué respalda**:
+- ✅ Configuración completa del cluster (corosync.conf, estado de nodos)
+- ✅ Todas las configuraciones de VMs y Contenedores
+- ✅ Configuración de red (/etc/network/interfaces y bridges)
+- ✅ Configuración de storage (storage.cfg)
+- ✅ Usuarios, grupos, ACLs y permisos
+- ✅ Configuración del firewall
+- ✅ Certificados SSL
+- ✅ Crontab y tareas programadas
+- ✅ Información de LVM/ZFS
+- ✅ Información completa del sistema
+
+**Salida**:
+- Directorio: `/root/cluster-removal-backup-TIMESTAMP/`
+- Comprimido: `/root/cluster-removal-backup-TIMESTAMP.tar.gz`
+
+**⚠️ IMPORTANTE**: 
+- Este script NO respalda los DATOS de las VMs/Contenedores, solo sus configuraciones
+- Debes usar `vzdump` para respaldar los datos de VMs/Contenedores
+- Ejecuta este script en CADA nodo del cluster antes de eliminarlo
+- Consulta `docs/cluster-recreation-guide.md` para el proceso completo
+
 ## Automatización con Cron
 
 Para ejecutar backups automáticamente, agrega a crontab:

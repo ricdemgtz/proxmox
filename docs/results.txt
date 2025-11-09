@@ -1,0 +1,123 @@
+root@proxmedia:~# systemctl status pve-cluster
+systemctl status corosync
+● pve-cluster.service - The Proxmox VE cluster filesystem
+     Loaded: loaded (/usr/lib/systemd/system/pve-cluster.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:27:57 CST; 1min 3s ago
+ Invocation: adb73e4f05744819ac57809662b8c800
+    Process: 1023 ExecStart=/usr/bin/pmxcfs (code=exited, status=0/SUCCESS)
+   Main PID: 1039 (pmxcfs)
+      Tasks: 6 (limit: 13991)
+     Memory: 55.6M (peak: 62.2M)
+        CPU: 208ms
+     CGroup: /system.slice/pve-cluster.service
+             └─1039 /usr/bin/pmxcfs
+
+Nov 09 03:28:02 proxmedia pmxcfs[1039]: [dcdb] notice: synced members: 1/1327
+Nov 09 03:28:02 proxmedia pmxcfs[1039]: [dcdb] notice: waiting for updates from leader
+Nov 09 03:28:02 proxmedia pmxcfs[1039]: [dcdb] notice: update complete - trying to commit (got 1 inode updates)
+Nov 09 03:28:02 proxmedia pmxcfs[1039]: [dcdb] notice: all data is up to date
+Nov 09 03:28:02 proxmedia pmxcfs[1039]: [status] notice: received all states
+Nov 09 03:28:02 proxmedia pmxcfs[1039]: [status] notice: all data is up to date
+Nov 09 03:28:46 proxmedia pmxcfs[1039]: [status] notice: received log
+Nov 09 03:28:47 proxmedia pmxcfs[1039]: [status] notice: received log
+Nov 09 03:28:47 proxmedia pmxcfs[1039]: [status] notice: received log
+Nov 09 03:28:47 proxmedia pmxcfs[1039]: [status] notice: received log
+● corosync.service - Corosync Cluster Engine
+     Loaded: loaded (/usr/lib/systemd/system/corosync.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:27:57 CST; 1min 3s ago
+ Invocation: 43cda48d41114087bff0d3068b867101
+       Docs: man:corosync
+             man:corosync.conf
+             man:corosync_overview
+   Main PID: 1186 (corosync)
+      Tasks: 9 (limit: 13991)
+     Memory: 151.1M (peak: 167.9M)
+        CPU: 836ms
+     CGroup: /system.slice/corosync.service
+             └─1186 /usr/sbin/corosync -f
+
+Nov 09 03:27:59 proxmedia corosync[1186]:   [KNET  ] link: Resetting MTU for link 0 because host 1 joined
+Nov 09 03:27:59 proxmedia corosync[1186]:   [KNET  ] host: host: 1 (passive) best link: 0 (pri: 1)
+Nov 09 03:27:59 proxmedia corosync[1186]:   [KNET  ] pmtud: PMTUD link change for host: 1 link: 0 from 469 to 1397
+Nov 09 03:27:59 proxmedia corosync[1186]:   [KNET  ] pmtud: Global data MTU changed to: 1397
+Nov 09 03:27:59 proxmedia corosync[1186]:   [QUORUM] Sync members[2]: 1 2
+Nov 09 03:27:59 proxmedia corosync[1186]:   [QUORUM] Sync joined[1]: 1
+Nov 09 03:27:59 proxmedia corosync[1186]:   [TOTEM ] A new membership (1.5c) was formed. Members joined: 1
+Nov 09 03:27:59 proxmedia corosync[1186]:   [QUORUM] This node is within the primary component and will provide service.
+Nov 09 03:27:59 proxmedia corosync[1186]:   [QUORUM] Members[2]: 1 2
+Nov 09 03:27:59 proxmedia corosync[1186]:   [MAIN  ] Completed service synchronization, ready to provide service.
+root@proxmedia:~# systemctl start pve-cluster
+systemctl start corosync
+pvecm status
+Cluster information
+-------------------
+Name:             proxmedia
+Config Version:   4
+Transport:        knet
+Secure auth:      on
+
+Quorum information
+------------------
+Date:             Sun Nov  9 03:29:11 2025
+Quorum provider:  corosync_votequorum
+Nodes:            2
+Node ID:          0x00000002
+Ring ID:          1.5c
+Quorate:          Yes
+
+Votequorum information
+----------------------
+Expected votes:   2
+Highest expected: 2
+Total votes:      2
+Quorum:           2  
+Flags:            Quorate 
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+0x00000001          1 192.168.1.78
+0x00000002          1 192.168.1.82 (local)
+root@proxmedia:~# 
+
+
+
+root@proxmedia:~# pvecm expected 2
+pvecm status
+pvecm nodes
+Cluster information
+-------------------
+Name:             proxmedia
+Config Version:   4
+Transport:        knet
+Secure auth:      on
+
+Quorum information
+------------------
+Date:             Sun Nov  9 03:29:27 2025
+Quorum provider:  corosync_votequorum
+Nodes:            2
+Node ID:          0x00000002
+Ring ID:          1.5c
+Quorate:          Yes
+
+Votequorum information
+----------------------
+Expected votes:   2
+Highest expected: 2
+Total votes:      2
+Quorum:           2  
+Flags:            Quorate 
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+0x00000001          1 192.168.1.78
+0x00000002          1 192.168.1.82 (local)
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+         1          1 proxmox
+         2          1 proxmedia (local)
+root@proxmedia:~# 

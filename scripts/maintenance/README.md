@@ -4,6 +4,39 @@ Este directorio contiene scripts para tareas de mantenimiento del servidor Proxm
 
 ## Scripts Disponibles
 
+### collect-system-info.sh
+**Propósito**: Recopila información completa del hardware y configuración del sistema para documentación.
+
+**Uso**:
+```bash
+chmod +x collect-system-info.sh
+./collect-system-info.sh
+```
+
+**Información Recopilada**:
+- ✅ Información general del sistema (hostname, versión Proxmox, kernel, uptime)
+- ✅ Hardware (fabricante, modelo, BIOS)
+- ✅ CPU (modelo, cores, threads, flags de virtualización)
+- ✅ RAM (total, módulos instalados, velocidad, fabricante)
+- ✅ Discos (todos los discos, particiones, información SMART)
+- ✅ LVM/ZFS (physical volumes, volume groups, logical volumes, pools)
+- ✅ GPU/Tarjetas gráficas (PCI, NVIDIA si está disponible)
+- ✅ Red (interfaces, configuración, bridges, velocidad)
+- ✅ Dispositivos USB
+- ✅ Configuración de Proxmox (storage, VMs, contenedores, usuarios)
+- ✅ Cluster (si está configurado)
+- ✅ Rendimiento (benchmark con pveperf)
+- ✅ Temperaturas (si lm-sensors está instalado)
+- ✅ Estado de servicios Proxmox
+
+**Salida**:
+- Archivo de texto: `/tmp/proxmox-system-info/system-report-TIMESTAMP.txt`
+- Archivo HTML: `/tmp/proxmox-system-info/system-report-TIMESTAMP.html`
+
+**Recomendado**: Ejecutar este script inmediatamente después de instalar Proxmox en cada nodo del cluster para documentar las especificaciones base del sistema.
+
+**Para cluster de múltiples nodos**: Ejecutar en cada nodo y comparar las salidas.
+
 ### system-maintenance.sh
 Script principal de mantenimiento del sistema.
 
