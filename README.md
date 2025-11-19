@@ -1,6 +1,26 @@
-# Proxmox Server Management Repository
+# Proxmox Cluster Management Repository
 
-Este repositorio contiene toda la configuración, scripts y documentación para la gestión del servidor Proxmox.
+Este repositorio contiene toda la configuración, scripts y documentación para la gestión del **cluster Proxmox "proxmedia"**.
+
+## 🏗️ Cluster Proxmedia
+
+**Cluster de 2 nodos** con alta disponibilidad:
+- **Nodo 1** (proxmox): `192.168.1.78` - 5 LXC + 1 VM
+- **Nodo 2** (proxmedia): `192.168.1.82` - 1 LXC
+
+**Servicios desplegados**: 6 contenedores LXC con 19 contenedores Docker ejecutándose
+- Reverse Proxy (Nginx Proxy Manager + Cloudflare)
+- Media Server (Jellyfin + Radarr + Sonarr + Prowlarr + Bazarr + qBittorrent)
+- Photo Management (Immich)
+- Password Manager (Vaultwarden)
+- DNS Ad-Blocker (AdGuard Home)
+- Monitoring (Uptime Kuma)
+- Home Automation (Home Assistant OS)
+
+Ver documentación completa en:
+- 📋 **Inventario**: `configs/containers/inventory.md` y `configs/vms/inventory.md`
+- 🐳 **Docker Stacks**: `configs/containers/docker-stacks.md`
+- 🌐 **Arquitectura de Red**: `docs/network-architecture.md`
 
 ## 📁 Estructura del Repositorio
 
@@ -75,12 +95,22 @@ Los backups NO se versionan en Git. Utiliza los scripts en `scripts/backup/` par
 ## 📖 Documentación Adicional
 
 Consulta el directorio `docs/` para documentación detallada sobre:
-- Configuración inicial del servidor
-- Procedimientos de respaldo y recuperación
-- Guías de troubleshooting
-- Mejores prácticas
-- Instalación de GitHub Copilot CLI (`docs/github-copilot-cli.md`)
+- **Configuración inicial del servidor** (`setup-guide.md`)
+- **Arquitectura de red completa** (`network-architecture.md`) ⭐ NUEVO
+- **Recreación del cluster** (`cluster-recreation-guide.md`)
+- **Procedimientos de respaldo y recuperación** (`backup-recovery.md`)
+- **Guías de troubleshooting** (`troubleshooting.md`)
+- **Mejores prácticas de seguridad** (`security-best-practices.md`)
+- **Especificaciones de hardware** (`hardware-specs.md`)
+
+### Documentación de Contenedores
+
+- **Inventario de LXC**: `configs/containers/inventory.md`
+- **Docker Stacks**: `configs/containers/docker-stacks.md` ⭐ NUEVO
+- **Configuración Uptime Kuma**: `configs/containers/lxc-105-uptimekuma.conf.example` ⭐ NUEVO
 
 ---
 
-**Última actualización**: 2025-11-09
+**Última actualización**: 2025-11-19
+**Cluster**: proxmedia (2 nodos)
+**Administrador**: Ricardo Gutierrez

@@ -4,15 +4,15 @@ Este archivo mantiene un registro de todas las VMs en el servidor Proxmox.
 
 ## VMs de Producción
 
-| VM ID | Nombre | OS | vCPU | RAM | Disco | IP | Propósito | Estado |
-|-------|--------|-------|------|-----|-------|------------|-----------|--------|
-| 100 | - | - | - | - | - | - | - | - |
+| VM ID | Nombre | OS | vCPU | RAM | Disco | IP | Propósito | Estado | Tags | Nodo |
+|-------|--------|-------|------|-----|-------|------------|-----------|--------|------|------|
+| 104 | haos | Home Assistant OS | 2 | 4096MB | - | Pendiente configurar qemu-guest-agent | Home automation platform | Activa | community-script | proxmox |
 
 ## VMs de Desarrollo
 
-| VM ID | Nombre | OS | vCPU | RAM | Disco | IP | Propósito | Estado |
-|-------|--------|-------|------|-----|-------|------------|-----------|--------|
-| 200 | - | - | - | - | - | - | - | - |
+| VM ID | Nombre | OS | vCPU | RAM | Disco | IP | Propósito | Estado | Tags | Nodo |
+|-------|--------|-------|------|-----|-------|------------|-----------|--------|------|------|
+| - | - | - | - | - | - | - | - | - | - | - |
 
 ## Plantillas
 

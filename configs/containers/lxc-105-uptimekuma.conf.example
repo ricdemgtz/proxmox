@@ -1,0 +1,301 @@
+# Configuración de LXC 105 - Uptime Kuma
+
+Este archivo documenta la configuración completa del contenedor LXC 105 que ejecuta Uptime Kuma.
+
+## 📋 Información General
+
+- **CT ID**: 105
+- **Hostname**: uptimekuma
+- **IP**: 192.168.1.70 (DHCP)
+- **Nodo**: proxmox
+- **Estado**: Running
+- **Tags**: analytics;community-script;monitoring
+
+## 🔧 Especificaciones de Recursos
+
+- **Arquitectura**: amd64
+- **CPU Cores**: 1
+- **Memoria RAM**: 1024MB
+- **Swap**: 512MB
+- **Disco**: 16GB (local-lvm:vm-105-disk-0)
+- **OS Type**: Debian
+- **Auto-start**: Sí (onboot: 1)
+
+## 🌐 Configuración de Red
+
+```conf
+net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:CA:F1:FC,ip=dhcp,ip6=auto,type=veth
+```
+
+- **Bridge**: vmbr0
+- **MAC Address**: BC:24:11:CA:F1:FC
+- **IPv4**: DHCP (asignada: 192.168.1.70)
+- **IPv6**: Auto-configuración
+- **Tipo**: veth (Virtual Ethernet)
+
+## ⚙️ Features y Capabilities
+
+### Features Habilitadas
+```conf
+features: keyctl=1,nesting=1,fuse=1
+```
+
+- **keyctl=1**: Soporte para kernel keyrings
+- **nesting=1**: Permite ejecutar contenedores dentro del LXC (Docker)
+- **fuse=1**: Soporte para sistemas de archivos FUSE
+
+### Capabilities del Kernel
+
+**Capabilities Mantenidas**:
+```conf
+lxc.cap.keep: sys_admin sys_chroot sys_ptrace net_admin net_raw sys_module sys_time
+```
+
+- `sys_admin`: Operaciones administrativas del sistema
+- `sys_chroot`: Cambiar directorio raíz
+- `sys_ptrace`: Rastrear procesos
+- `net_admin`: Administración de red
+- `net_raw`: Uso de sockets RAW
+- `sys_module`: Cargar módulos del kernel
+- `sys_time`: Configurar reloj del sistema
+
+**Capabilities Eliminadas**:
+```conf
+lxc.cap.drop: 
+```
+(Lista vacía - se mantienen todas las necesarias)
+
+## 🔒 Seguridad
+
+### AppArmor
+```conf
+lxc.apparmor.profile: unconfined
+```
+
+**Nota**: El perfil AppArmor está desconfinado para permitir máxima compatibilidad con contenedores Docker y dispositivos especiales.
+
+### Control de Grupos (cgroup2)
+
+**Permitir acceso a dispositivos**:
+```conf
+lxc.cgroup2.devices.allow: a
+lxc.cgroup2.devices.allow: c 10:200 rwm
+lxc.cgroup2.devices.allow: c 188:* rwm
+lxc.cgroup2.devices.allow: c 189:* rwm
+lxc.cgroup2.devices.allow: c 226:128 rwm
+lxc.cgroup2.devices.allow: c 226:0 rwm
+```
+
+Dispositivos permitidos:
+- `a`: Todos los dispositivos
+- `c 10:200`: Dispositivos de red TUN/TAP
+- `c 188:*`: Puertos USB
+- `c 189:*`: Dispositivos USB adicionales
+- `c 226:128`: DRI renderD128 (GPU)
+- `c 226:0`: DRI card0 (GPU)
+
+### Auto-mount de cgroups
+```conf
+lxc.mount.auto: cgroup:rw
+```
+
+Monta automáticamente cgroups con permisos de lectura/escritura.
+
+## 📁 Device Passthrough
+
+### Dispositivos Seriales (USB)
+```conf
+lxc.mount.entry: /dev/serial/by-id  dev/serial/by-id  none bind,optional,create=dir
+lxc.mount.entry: /dev/ttyUSB0       dev/ttyUSB0       none bind,optional,create=file
+lxc.mount.entry: /dev/ttyUSB1       dev/ttyUSB1       none bind,optional,create=file
+lxc.mount.entry: /dev/ttyACM0       dev/ttyACM0       none bind,optional,create=file
+lxc.mount.entry: /dev/ttyACM1       dev/ttyACM1       none bind,optional,create=file
+```
+
+**Propósito**: Permitir acceso a dispositivos seriales USB (útil para integraciones de IoT con Home Assistant u otros servicios de monitoreo)
+
+### Dispositivos de GPU/Render
+```conf
+lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file
+lxc.mount.entry: /dev/dri/card0 dev/dri/card0 none bind,optional,create=file
+lxc.mount.entry: /dev/dri dev/dri none bind,optional,create=dir
+```
+
+**Propósito**: Passthrough de GPU para transcodificación de video o aceleración hardware
+
+### Dispositivo TUN/TAP
+```conf
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+```
+
+**Propósito**: Necesario para VPNs y túneles de red (útil para Cloudflare Tunnels u otras VPN)
+
+## 📝 Archivo de Configuración Completo
+
+Ubicación en Proxmox: `/etc/pve/lxc/105.conf`
+
+```conf
+#<div align='center'>
+#  <a href='https://Helper-Scripts.com' target='_blank' rel='noopener noreferrer'>
+#    <img src='https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo-81x112.png' alt='Logo' style='width:81px;height:112px;'/>
+#  </a>
+#
+#  <h2 style='font-size: 24px; margin: 20px 0;'>Uptime Kuma LXC</h2>
+#
+#  <p style='margin: 16px 0;'>
+#    <a href='https://ko-fi.com/community_scripts' target='_blank' rel='noopener noreferrer'>
+#      <img src='https://img.shields.io/badge/☕-Buy us a coffee-blue' alt='spend Coffee' />
+#    </a>
+#  </p>
+#
+#  <span style='margin: 0 10px;'>
+#    <i class="fa fa-github fa-fw" style="color: #f5f5f5;"></i>
+#    <a href='https://github.com/community-scripts/ProxmoxVE' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>GitHub</a>
+#  </span>
+#  <span style='margin: 0 10px;'>
+#    <i class="fa fa-comments fa-fw" style="color: #f5f5f5;"></i>
+#    <a href='https://github.com/community-scripts/ProxmoxVE/discussions' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Discussions</a>
+#  </span>
+#  <span style='margin: 0 10px;'>
+#    <i class="fa fa-exclamation-circle fa-fw" style="color: #f5f5f5;"></i>
+#    <a href='https://github.com/community-scripts/ProxmoxVE/issues' target='_blank' rel='noopener noreferrer' style='text-decoration: none; color: #00617f;'>Issues</a>
+#  </span>
+#</div>
+arch: amd64
+cores: 1
+features: keyctl=1,nesting=1,fuse=1
+hostname: uptimekuma
+memory: 1024
+net0: name=eth0,bridge=vmbr0,hwaddr=BC:24:11:CA:F1:FC,ip=dhcp,ip6=auto,type=veth
+onboot: 1
+ostype: debian
+rootfs: local-lvm:vm-105-disk-0,size=16G
+swap: 512
+tags: analytics;community-script;monitoring
+lxc.cgroup2.devices.allow: a
+lxc.cap.drop: 
+lxc.cgroup2.devices.allow: c 10:200 rwm
+lxc.cgroup2.devices.allow: c 188:* rwm
+lxc.cgroup2.devices.allow: c 189:* rwm
+lxc.mount.auto: cgroup:rw
+lxc.apparmor.profile: unconfined
+lxc.cap.keep: sys_admin sys_chroot sys_ptrace net_admin net_raw sys_module sys_time
+lxc.mount.entry: /dev/serial/by-id  dev/serial/by-id  none bind,optional,create=dir
+lxc.mount.entry: /dev/ttyUSB0       dev/ttyUSB0       none bind,optional,create=file
+lxc.mount.entry: /dev/ttyUSB1       dev/ttyUSB1       none bind,optional,create=file
+lxc.mount.entry: /dev/ttyACM0       dev/ttyACM0       none bind,optional,create=file
+lxc.mount.entry: /dev/ttyACM1       dev/ttyACM1       none bind,optional,create=file
+lxc.cgroup2.devices.allow: c 226:128 rwm
+lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file
+lxc.cgroup2.devices.allow: c 226:0 rwm
+lxc.mount.entry: /dev/dri/card0 dev/dri/card0 none bind,optional,create=file
+lxc.mount.entry: /dev/dri dev/dri none bind,optional,create=dir
+lxc.mount.entry: /dev/net/tun dev/net/tun none bind,create=file
+```
+
+## 🎯 Propósito y Uso
+
+### Uptime Kuma
+Uptime Kuma es una herramienta de monitoreo auto-hospedada que proporciona:
+
+- Monitoreo de disponibilidad de servicios HTTP(s)
+- Monitoreo de puertos TCP/UDP
+- Checks de ping
+- Monitoreo de certificados SSL
+- Dashboard visual con estadísticas
+- Alertas vía múltiples canales (email, Telegram, Discord, etc.)
+
+### Casos de Uso en este Cluster
+
+Con esta configuración, Uptime Kuma puede:
+
+1. **Monitorear todos los servicios del cluster**:
+   - Jellyfin (192.168.1.50:8096)
+   - Nginx Proxy Manager (192.168.1.100:80-81)
+   - Immich (192.168.1.102:2283)
+   - Vaultwarden (192.168.1.101:8080)
+   - Otros servicios
+
+2. **Integración con IoT** (gracias al passthrough USB):
+   - Dispositivos conectados vía serial
+   - Sensores de temperatura, humedad, etc.
+
+3. **Acceso remoto**:
+   - Vía túnel Cloudflare (usando /dev/net/tun)
+   - VPN si se configura
+
+## 🔍 Comandos de Gestión
+
+### Ver configuración actual
+```bash
+pct config 105
+```
+
+### Ver estado del contenedor
+```bash
+pct status 105
+```
+
+### Entrar al contenedor
+```bash
+pct enter 105
+```
+
+### Ver logs
+```bash
+pct exec 105 -- journalctl -f
+```
+
+### Reiniciar el contenedor
+```bash
+pct reboot 105
+```
+
+### Detener/Iniciar
+```bash
+pct stop 105
+pct start 105
+```
+
+## 📊 Monitoreo de Recursos
+
+### Desde Proxmox
+```bash
+# Ver uso de CPU/RAM
+pct exec 105 -- top
+
+# Ver uso de disco
+pct exec 105 -- df -h
+
+# Ver procesos
+pct exec 105 -- ps aux
+```
+
+## ⚠️ Notas Importantes
+
+1. **Community Script**: Este contenedor fue creado usando los scripts de la comunidad de Proxmox (Helper-Scripts.com)
+
+2. **Configuración Avanzada**: La configuración incluye passthroughs de dispositivos que pueden no ser necesarios para todos los casos de uso de Uptime Kuma
+
+3. **Seguridad**: El perfil AppArmor desconfinado y las capacidades extendidas son necesarias para el passthrough de dispositivos, pero aumentan la superficie de ataque
+
+4. **DHCP vs IP Estática**: Actualmente usa DHCP. Para producción, considera cambiar a IP estática:
+   ```bash
+   # Editar configuración
+   nano /etc/pve/lxc/105.conf
+   # Cambiar: ip=dhcp por ip=192.168.1.70/24,gw=192.168.1.1
+   ```
+
+5. **Backup Recomendado**: Incluir este contenedor en los backups regulares debido a la configuración de monitoreo
+
+## 🔗 Referencias
+
+- [Uptime Kuma GitHub](https://github.com/louislam/uptime-kuma)
+- [Proxmox Helper Scripts](https://helper-scripts.com/)
+- [Community Scripts ProxmoxVE](https://github.com/community-scripts/ProxmoxVE)
+
+---
+
+**Creado**: 2025-11-19 (aproximadamente)
+**Última actualización**: 2025-11-19
+**Fuente**: community-scripts/ProxmoxVE

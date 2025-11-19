@@ -8,14 +8,16 @@ Esta carpeta contiene toda la documentación relacionada con la configuración y
 2. **hardware-specs.md** - Especificaciones de hardware del cluster (plantilla)
 3. **recopilar-info-hardware.md** - Guía para recopilar información de hardware
 4. **cluster-recreation-guide.md** - Guía completa para eliminar y recrear el cluster
-5. **networking.md** - Configuración de red detallada
-6. **storage.md** - Guía de almacenamiento
-7. **backup-recovery.md** - Procedimientos de backup y recuperación
-8. **troubleshooting.md** - Guía de resolución de problemas
-9. **security-best-practices.md** - Mejores prácticas de seguridad
-10. **vm-management.md** - Gestión de máquinas virtuales
-11. **container-management.md** - Gestión de contenedores LXC
-12. **github-copilot-cli.md** - Instalación y uso de GitHub Copilot CLI
+5. **network-architecture.md** - ⭐ **NUEVO**: Arquitectura de red completa con IPs, puertos y topología
+6. **networking.md** - Configuración de red detallada
+7. **storage.md** - Guía de almacenamiento
+8. **backup-recovery.md** - Procedimientos de backup y recuperación
+9. **troubleshooting.md** - Guía de resolución de problemas
+10. **security-best-practices.md** - Mejores prácticas de seguridad
+11. **vm-management.md** - Gestión de máquinas virtuales
+12. **container-management.md** - Gestión de contenedores LXC
+13. **github-copilot-cli.md** - Instalación y uso de GitHub Copilot CLI
+14. **uptime-kuma-deployment.md** - Deployment de Uptime Kuma
 
 ## 🎯 Inicio Rápido
 

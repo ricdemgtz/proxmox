@@ -2,6 +2,26 @@
 
 Este directorio contiene las configuraciones y plantillas de contenedores LXC.
 
+## 📁 Archivos en este Directorio
+
+- **`inventory.md`**: Inventario completo de todos los contenedores LXC con IPs, recursos y propósito
+- **`docker-stacks.md`**: Documentación detallada de todos los stacks de Docker desplegados en LXC
+- **`lxc-105-uptimekuma.conf.example`**: Configuración completa de ejemplo del contenedor Uptime Kuma
+
+## 🌐 Contenedores Actuales en el Cluster
+
+### Nodo: proxmox (192.168.1.78)
+- **LXC 100** (proxy): Nginx Proxy Manager, Cloudflared - `192.168.1.100`
+- **LXC 101** (apps): Vaultwarden - `192.168.1.101`
+- **LXC 102** (media): Immich (fotos) - `192.168.1.102`
+- **LXC 103** (adguard): AdGuard Home DNS - `192.168.1.120`
+- **LXC 105** (uptimekuma): Uptime Kuma monitoring - `192.168.1.70`
+
+### Nodo: proxmedia (192.168.1.82)
+- **LXC 200** (mediaserver): Jellyfin + *arr stack - `192.168.1.50`
+
+Ver detalles completos en `inventory.md`
+
 ## Estructura
 
 Organiza los contenedores por propósito:
