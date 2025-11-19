@@ -16,7 +16,10 @@ Este archivo mantiene un registro de todos los contenedores en el servidor Proxm
 
 | CT ID | Nombre | OS | vCPU | RAM | Disco | IP Local | IP Tailscale | Propósito | Privilegiado | Estado | Tags | Nodo | Docker Stack |
 |-------|--------|---------|------|-----|-------|----------|--------------|-----------|--------------|--------|------|------|--------------|
-| 200 | mediaserver | Debian | 4 | 8192MB | - | 192.168.1.50 | 100.78.240.75 | Media server completo | No | Activo | - | proxmedia | jellyfin, jellyseerr, radarr, sonarr, prowlarr, bazarr, qbittorrent, portainer |
+| 200 | proxmedia | mediaserver | 192.168.1.50 | 100.68.73.113 | 4 | 8192 | 1000 | Docker: Jellyfin + *arr stack + qBittorrent | Unprivileged | media, docker |
+| 205 | proxmedia | uptimekuma-backup | 192.168.1.71 | TBD | 1 | 1024 | 16 | Uptime Kuma (respaldo/standby de LXC 105) | Unprivileged | monitoring, backup, standby |
+
+---
 
 ## Plantillas Disponibles
 

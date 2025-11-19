@@ -18,6 +18,7 @@ Esta carpeta contiene toda la documentación relacionada con la configuración y
 12. **container-management.md** - Gestión de contenedores LXC
 13. **github-copilot-cli.md** - Instalación y uso de GitHub Copilot CLI
 14. **uptime-kuma-deployment.md** - Deployment de Uptime Kuma
+15. **uptime-kuma-backup-setup.md** - ⭐ **NUEVO**: Configuración de LXC de respaldo en nodo secundario
 
 ## 🎯 Inicio Rápido
 
