@@ -1,0 +1,715 @@
+Generando reporte del sistema...
+Fecha: Sun Nov  9 03:31:55 AM CST 2025
+Hostname: proxmedia
+
+========================================
+INFORMACIÓN GENERAL DEL SISTEMA
+========================================
+
+=== Hostname ===
+proxmedia
+
+=== Versión de Proxmox ===
+proxmox-ve: 9.0.0 (running kernel: 6.14.8-2-pve)
+pve-manager: 9.0.3 (running version: 9.0.3/025864202ebb6109)
+proxmox-kernel-helper: 9.0.3
+proxmox-kernel-6.14.8-2-pve-signed: 6.14.8-2
+proxmox-kernel-6.14: 6.14.8-2
+ceph-fuse: 19.2.3-pve1
+corosync: 3.1.9-pve2
+criu: 4.1.1-1
+frr-pythontools: 10.3.1-1+pve4
+ifupdown2: 3.3.0-1+pmx9
+intel-microcode: 3.20250512.1
+ksm-control-daemon: 1.5-1
+libjs-extjs: 7.0.0-5
+libproxmox-acme-perl: 1.7.0
+libproxmox-backup-qemu0: 2.0.1
+libproxmox-rs-perl: 0.4.1
+libpve-access-control: 9.0.3
+libpve-apiclient-perl: 3.4.0
+libpve-cluster-api-perl: 9.0.6
+libpve-cluster-perl: 9.0.6
+libpve-common-perl: 9.0.9
+libpve-guest-common-perl: 6.0.2
+libpve-http-server-perl: 6.0.3
+libpve-network-perl: 1.1.6
+libpve-rs-perl: 0.10.7
+libpve-storage-perl: 9.0.13
+libspice-server1: 0.15.2-1+b1
+lvm2: 2.03.31-2
+lxc-pve: 6.0.4-2
+lxcfs: 6.0.4-pve1
+novnc-pve: 1.6.0-3
+proxmox-backup-client: 4.0.9-1
+proxmox-backup-file-restore: 4.0.9-1
+proxmox-backup-restore-image: 1.0.0
+proxmox-firewall: 1.1.1
+proxmox-kernel-helper: 9.0.3
+proxmox-mail-forward: 1.0.2
+proxmox-mini-journalreader: 1.6
+proxmox-offline-mirror-helper: 0.7.0
+proxmox-widget-toolkit: 5.0.4
+pve-cluster: 9.0.6
+pve-container: 6.0.9
+pve-docs: 9.0.7
+pve-edk2-firmware: 4.2025.02-4
+pve-esxi-import-tools: 1.0.1
+pve-firewall: 6.0.3
+pve-firmware: 3.16-3
+pve-ha-manager: 5.0.4
+pve-i18n: 3.5.2
+pve-qemu-kvm: 10.0.2-4
+pve-xtermjs: 5.5.0-2
+qemu-server: 9.0.16
+smartmontools: 7.4-pve1
+spiceterm: 3.4.0
+swtpm: 0.8.0+pve2
+vncterm: 1.9.0
+zfsutils-linux: 2.3.3-pve1
+
+=== Sistema Operativo ===
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.0
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+=== Kernel ===
+Linux proxmedia 6.14.8-2-pve #1 SMP PREEMPT_DYNAMIC PMX 6.14.8-2 (2025-07-22T10:04Z) x86_64 GNU/Linux
+
+=== Uptime ===
+ 03:31:56 up 4 min,  2 users,  load average: 0.35, 0.29, 0.13
+
+
+========================================
+INFORMACIÓN DE HARDWARE
+========================================
+
+=== Información General del Hardware ===
+	Manufacturer: Dell Inc.
+	Product Name: Inspiron 7559
+	Serial Number: JZHLKD2
+	UUID: 4c4c4544-005a-4810-804c-cac04f4b4432
+
+=== BIOS ===
+	Vendor: Dell Inc.
+	Version: 1.3.0
+	Release Date: 12/01/2018
+
+
+========================================
+INFORMACIÓN DEL PROCESADOR
+========================================
+
+=== CPU Detallada ===
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  8
+On-line CPU(s) list:                     0-7
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+CPU family:                              6
+Model:                                   94
+Thread(s) per core:                      2
+Core(s) per socket:                      4
+Socket(s):                               1
+Stepping:                                3
+CPU(s) scaling MHz:                      90%
+CPU max MHz:                             3500.0000
+CPU min MHz:                             800.0000
+BogoMIPS:                                5199.98
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb pti ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities
+Virtualization:                          VT-x
+L1d cache:                               128 KiB (4 instances)
+L1i cache:                               128 KiB (4 instances)
+L2 cache:                                1 MiB (4 instances)
+L3 cache:                                6 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-7
+Vulnerability Gather data sampling:      Vulnerable: No microcode
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             KVM: Mitigation: Split huge pages
+Vulnerability L1tf:                      Mitigation; PTE Inversion; VMX conditional cache flushes, SMT vulnerable
+Vulnerability Mds:                       Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Mitigation; Clear CPU buffers; SMT vulnerable
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; IBRS; IBPB conditional; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Mitigation; Microcode
+Vulnerability Tsx async abort:           Mitigation; TSX disabled
+
+=== Modelo y Cantidad ===
+model name	: Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz
+Cores físicos: 8
+Sockets: 1
+Cores por socket: 4
+Threads por core: 2
+
+=== Flags de CPU (Virtualización) ===
+vmx
+Virtualización Intel (VT-x): HABILITADA
+
+
+========================================
+INFORMACIÓN DE MEMORIA RAM
+========================================
+
+=== Resumen de Memoria ===
+               total        used        free      shared  buff/cache   available
+Mem:            11Gi       1.8Gi       9.6Gi        67Mi       420Mi       9.7Gi
+Swap:          8.0Gi          0B       8.0Gi
+
+=== Memoria Total ===
+MemTotal:       12111856 kB
+
+=== Módulos de RAM Instalados ===
+	Error Correction Type: None
+	Size: 8 GB
+	Type: DDR3
+	Speed: 1600 MT/s
+	Manufacturer: 80AD000080AD
+	Serial Number: 16992278
+	Part Number: HMT41GS6DFR8A-PB  
+	Configured Memory Speed: 1600 MT/s
+	Size: 4 GB
+	Type: DDR3
+	Speed: 1600 MT/s
+	Manufacturer: 80AD000080AD
+	Serial Number: 14119836
+	Part Number: HMT451S6BFR8A-PB  
+	Configured Memory Speed: 1600 MT/s
+
+=== Slots de Memoria ===
+	Maximum Capacity: 16 GB
+	Number Of Devices: 2
+
+
+========================================
+INFORMACIÓN DE DISCOS Y ALMACENAMIENTO
+========================================
+
+=== Lista de Discos (lsblk) ===
+NAME                 SIZE TYPE FSTYPE      MOUNTPOINT MODEL               SERIAL
+sda                119.2G disk                        SSD 128GB           AA000000000000001520
+├─sda1              1007K part                                            
+├─sda2                 1G part vfat                                       
+└─sda3             118.2G part LVM2_member                                
+  ├─pve-swap           8G lvm  swap        [SWAP]                         
+  ├─pve-root        39.6G lvm  ext4        /                              
+  ├─pve-data_tmeta     1G lvm                                             
+  │ └─pve-data      53.9G lvm                                             
+  └─pve-data_tdata  53.9G lvm                                             
+    └─pve-data      53.9G lvm                                             
+sdb                931.5G disk                        TOSHIBA MQ02ABD100H 76DUTA8NT
+├─sdb1             931.5G part zfs_member                                 
+└─sdb9                 8M part                                            
+sdc                114.6G disk iso9660                SanDisk 3.2Gen1     09015ecc69a7077b6b8151f308d73d3844107df65c815c5c7e5560297ffd68590cb3000000000000000000002dc438e6ff115220675581074dad0c3a
+├─sdc1               282K part                                            
+├─sdc2                 8M part vfat                                       
+├─sdc3               1.5G part hfsplus                                    
+└─sdc4               300K part                                            
+
+=== Detalles de Discos (fdisk) ===
+Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+Disk model: SSD 128GB       
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: CA576A31-5500-4A5D-AEA4-6240D1C5E0FE
+
+Device       Start       End   Sectors   Size Type
+/dev/sda1       34      2047      2014  1007K BIOS boot
+/dev/sda2     2048   2099199   2097152     1G EFI System
+/dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
+
+
+Disk /dev/sdb: 931.51 GiB, 1000204886016 bytes, 1953525168 sectors
+Disk model: TOSHIBA MQ02ABD1
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 4096 bytes
+I/O size (minimum/optimal): 4096 bytes / 4096 bytes
+Disklabel type: gpt
+Disk identifier: A22480BC-CD2F-9F4E-A5AF-31059A69FEEB
+
+Device          Start        End    Sectors   Size Type
+/dev/sdb1        2048 1953507327 1953505280 931.5G Solaris /usr & Apple ZFS
+/dev/sdb9  1953507328 1953523711      16384     8M Solaris reserved 1
+
+
+Disk /dev/mapper/pve-swap: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/pve-root: 39.56 GiB, 42475716608 bytes, 82960384 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdc: 114.6 GiB, 123048296448 bytes, 240328704 sectors
+Disk model:  SanDisk 3.2Gen1
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: A8A266FA-939E-4BE0-9E55-288C1D8D73EF
+
+Device       Start     End Sectors  Size Type
+/dev/sdc1       64     627     564  282K Microsoft basic data
+/dev/sdc2      628   17011   16384    8M EFI System
+/dev/sdc3    17012 3205631 3188620  1.5G Apple HFS/HFS+
+/dev/sdc4  3205632 3206231     600  300K Microsoft basic data
+
+=== Información SMART de Discos ===
+--- Disco /dev/sda ---
+Device Model:     SSD 128GB
+Serial Number:    AA000000000000001520
+User Capacity:    128,035,676,160 bytes [128 GB]
+Rotation Rate:    Solid State Device
+
+--- Disco /dev/sdb ---
+Device Model:     TOSHIBA MQ02ABD100H
+Serial Number:    76DUTA8NT
+User Capacity:    1,000,204,886,016 bytes [1.00 TB]
+Rotation Rate:    5400 rpm
+
+--- Disco /dev/sdc ---
+
+
+=== Uso de Espacio en Disco ===
+Filesystem            Size  Used Avail Use% Mounted on
+udev                  5.8G     0  5.8G   0% /dev
+tmpfs                 1.2G  1.5M  1.2G   1% /run
+/dev/mapper/pve-root   39G  3.4G   34G  10% /
+tmpfs                 5.8G   66M  5.8G   2% /dev/shm
+efivarfs              256K  150K  102K  60% /sys/firmware/efi/efivars
+tmpfs                 5.0M     0  5.0M   0% /run/lock
+tmpfs                 1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                 5.8G   28K  5.8G   1% /tmp
+/dev/fuse             128M   32K  128M   1% /etc/pve
+tmpfs                 1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                 1.2G  4.0K  1.2G   1% /run/user/0
+
+
+========================================
+INFORMACIÓN DE VOLÚMENES LÓGICOS
+========================================
+
+=== Physical Volumes (PV) ===
+  PV         VG  Fmt  Attr PSize    PFree 
+  /dev/sda3  pve lvm2 a--  <118.24g 14.75g
+  --- Physical volume ---
+  PV Name               /dev/sda3
+  VG Name               pve
+  PV Size               118.24 GiB / not usable <3.32 MiB
+  Allocatable           yes 
+  PE Size               4.00 MiB
+  Total PE              30269
+  Free PE               3777
+  Allocated PE          26492
+  PV UUID               naDi2H-arMN-xlfD-NiFQ-2fEM-3jEO-dx4ZhA
+   
+
+=== Volume Groups (VG) ===
+  VG  #PV #LV #SN Attr   VSize    VFree 
+  pve   1   3   0 wz--n- <118.24g 14.75g
+  --- Volume group ---
+  VG Name               pve
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  7
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                3
+  Open LV               2
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <118.24 GiB
+  PE Size               4.00 MiB
+  Total PE              30269
+  Alloc PE / Size       26492 / 103.48 GiB
+  Free  PE / Size       3777 / 14.75 GiB
+  VG UUID               mLAldW-slc6-cz0T-Luvt-AJUq-q2i3-gRppxr
+   
+
+=== Logical Volumes (LV) ===
+  LV   VG  Attr       LSize   Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  data pve twi-a-tz-- <53.93g             0.00   1.59                            
+  root pve -wi-ao---- <39.56g                                                    
+  swap pve -wi-ao----   8.00g                                                    
+  --- Logical volume ---
+  LV Name                data
+  VG Name                pve
+  LV UUID                hFngsX-B38y-s1pa-P4cF-RGgk-ccyw-DsFqRo
+  LV Write Access        read/write
+  LV Creation host, time proxmox, 2025-11-09 03:08:59 -0600
+  LV Pool metadata       data_tmeta
+  LV Pool data           data_tdata
+  LV Status              available
+  # open                 0
+  LV Size                <53.93 GiB
+  Allocated pool data    0.00%
+  Allocated metadata     1.59%
+  Current LE             13805
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           252:4
+   
+  --- Logical volume ---
+  LV Path                /dev/pve/swap
+  LV Name                swap
+  VG Name                pve
+  LV UUID                OpyTAt-WzSo-8ReC-ia2w-uXly-cgH4-yKWD0b
+  LV Write Access        read/write
+  LV Creation host, time proxmox, 2025-11-09 03:08:59 -0600
+  LV Status              available
+  # open                 1
+  LV Size                8.00 GiB
+  Current LE             2048
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           252:0
+   
+  --- Logical volume ---
+  LV Path                /dev/pve/root
+  LV Name                root
+  VG Name                pve
+  LV UUID                80B4cf-okKN-NCUT-XQ9Q-F6dF-9XRX-NRUwzm
+  LV Write Access        read/write
+  LV Creation host, time proxmox, 2025-11-09 03:08:59 -0600
+  LV Status              available
+  # open                 1
+  LV Size                <39.56 GiB
+  Current LE             10127
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           252:1
+   
+
+=== ZFS Pools ===
+no pools available
+
+=== ZFS Datasets ===
+
+
+========================================
+INFORMACIÓN DE GPU / TARJETAS GRÁFICAS
+========================================
+
+=== Tarjetas PCI (lspci) ===
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 530 (rev 06)
+02:00.0 3D controller: NVIDIA Corporation GM107M [GeForce GTX 960M] (rev a2)
+
+=== Detalles de GPU ===
+00:02.0 VGA compatible controller: Intel Corporation HD Graphics 530 (rev 06) (prog-if 00 [VGA controller])
+	DeviceName:  Onboard IGD
+	Subsystem: Dell Device 0706
+	Flags: bus master, fast devsel, latency 0, IRQ 144, IOMMU group 0
+	Memory at dd000000 (64-bit, non-prefetchable) [size=16M]
+	Memory at b0000000 (64-bit, prefetchable) [size=256M]
+	I/O ports at f000 [size=64]
+	Expansion ROM at 000c0000 [virtual] [disabled] [size=128K]
+	Capabilities: [40] Vendor Specific Information: Len=0c <?>
+	Capabilities: [70] Express Root Complex Integrated Endpoint, IntMsgNum 0
+	Capabilities: [ac] MSI: Enable+ Count=1/1 Maskable- 64bit-
+
+=== Todos los dispositivos PCI ===
+00:00.0 Host bridge [0600]: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Host Bridge/DRAM Registers [8086:1910] (rev 07)
+00:01.0 PCI bridge [0604]: Intel Corporation 6th-10th Gen Core Processor PCIe Controller (x16) [8086:1901] (rev 07)
+00:01.1 PCI bridge [0604]: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x8) [8086:1905] (rev 07)
+00:02.0 VGA compatible controller [0300]: Intel Corporation HD Graphics 530 [8086:191b] (rev 06)
+00:04.0 Signal processing controller [1180]: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem [8086:1903] (rev 07)
+00:14.0 USB controller [0c03]: Intel Corporation 100 Series/C230 Series Chipset Family USB 3.0 xHCI Controller [8086:a12f] (rev 31)
+00:14.2 Signal processing controller [1180]: Intel Corporation 100 Series/C230 Series Chipset Family Thermal Subsystem [8086:a131] (rev 31)
+00:15.0 Signal processing controller [1180]: Intel Corporation 100 Series/C230 Series Chipset Family Serial IO I2C Controller #0 [8086:a160] (rev 31)
+00:16.0 Communication controller [0780]: Intel Corporation 100 Series/C230 Series Chipset Family MEI Controller #1 [8086:a13a] (rev 31)
+00:17.0 SATA controller [0106]: Intel Corporation HM170/QM170 Chipset SATA Controller [AHCI Mode] [8086:a103] (rev 31)
+00:1c.0 PCI bridge [0604]: Intel Corporation 100 Series/C230 Series Chipset Family PCI Express Root Port #1 [8086:a110] (rev f1)
+00:1c.4 PCI bridge [0604]: Intel Corporation 100 Series/C230 Series Chipset Family PCI Express Root Port #5 [8086:a114] (rev f1)
+00:1c.5 PCI bridge [0604]: Intel Corporation 100 Series/C230 Series Chipset Family PCI Express Root Port #6 [8086:a115] (rev f1)
+00:1c.6 PCI bridge [0604]: Intel Corporation 100 Series/C230 Series Chipset Family PCI Express Root Port #7 [8086:a116] (rev f1)
+00:1f.0 ISA bridge [0601]: Intel Corporation HM170 Chipset LPC/eSPI Controller [8086:a14e] (rev 31)
+00:1f.2 Memory controller [0580]: Intel Corporation 100 Series/C230 Series Chipset Family Power Management Controller [8086:a121] (rev 31)
+00:1f.3 Audio device [0403]: Intel Corporation 100 Series/C230 Series Chipset Family HD Audio Controller [8086:a170] (rev 31)
+00:1f.4 SMBus [0c05]: Intel Corporation 100 Series/C230 Series Chipset Family SMBus [8086:a123] (rev 31)
+02:00.0 3D controller [0302]: NVIDIA Corporation GM107M [GeForce GTX 960M] [10de:139b] (rev a2)
+04:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 10)
+05:00.0 Network controller [0280]: Intel Corporation Wireless 3165 [8086:3165] (rev 79)
+06:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS522A PCI Express Card Reader [10ec:522a] (rev 01)
+
+
+========================================
+INFORMACIÓN DE RED
+========================================
+
+=== Interfaces de Red ===
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: enp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel master vmbr0 state UP group default qlen 1000
+    link/ether f4:8e:38:ea:9f:bb brd ff:ff:ff:ff:ff:ff
+    altname enxf48e38ea9fbb
+3: wlp5s0: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether b8:81:98:c3:0c:5d brd ff:ff:ff:ff:ff:ff
+    altname wlxb88198c30c5d
+4: vmbr0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether f4:8e:38:ea:9f:bb brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.82/24 scope global vmbr0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f68e:38ff:feea:9fbb/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+
+=== Configuración de Red (/etc/network/interfaces) ===
+auto lo
+iface lo inet loopback
+
+iface enp4s0 inet manual
+
+auto vmbr0
+iface vmbr0 inet static
+	address 192.168.1.82/24
+	gateway 192.168.1.254
+	bridge-ports enp4s0
+	bridge-stp off
+	bridge-fd 0
+
+iface wlp5s0 inet manual
+
+
+source /etc/network/interfaces.d/*
+
+=== Rutas de Red ===
+default via 192.168.1.254 dev vmbr0 proto kernel onlink 
+192.168.1.0/24 dev vmbr0 proto kernel scope link src 192.168.1.82 
+
+=== Tarjetas de Red (Hardware) ===
+04:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller (rev 10)
+05:00.0 Network controller: Intel Corporation Wireless 3165 (rev 79)
+
+=== Detalles de Interfaces de Red ===
+--- Interfaz: bonding_masters ---
+
+--- Interfaz: enp4s0 ---
+	Speed: 100Mb/s
+	Duplex: Full
+	Link detected: yes
+
+--- Interfaz: vmbr0 ---
+	Speed: 100Mb/s
+	Duplex: Unknown! (255)
+	Link detected: yes
+
+--- Interfaz: wlp5s0 ---
+	Link detected: no
+
+=== Bridges ===
+
+
+========================================
+DISPOSITIVOS USB Y OTROS
+========================================
+
+=== Dispositivos USB ===
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 002: ID 1bcf:2b8a Sunplus Innovation Technology Inc. Integrated_Webcam_HD
+Bus 001 Device 003: ID 8087:0a2a Intel Corp. Bluetooth wireless interface
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 002 Device 002: ID 0781:5567 SanDisk Corp. Cruzer Blade
+
+=== Todos los dispositivos Hardware ===
+
+
+========================================
+CONFIGURACIÓN DE PROXMOX
+========================================
+
+=== Almacenamiento Configurado ===
+Name              Type     Status           Total            Used       Available        %
+backups            lvm   disabled               0               0               0      N/A
+local              dir     active        40516856         3510408        34916056    8.66%
+local-lvm      lvmthin     active        56545280               0        56545280    0.00%
+media          zfspool   inactive               0               0               0    0.00%
+pequenasty     zfspool   disabled               0               0               0      N/A
+
+=== Storage.cfg ===
+dir: local
+	path /var/lib/vz
+	content vztmpl,iso,backup
+
+lvmthin: local-lvm
+	thinpool data
+	vgname pve
+	content images,rootdir
+
+zfspool: pequenasty
+	pool pequenasty
+	content rootdir,images
+	mountpoint /pequenasty
+	nodes proxmox
+
+lvm: backups
+	vgname backups
+	content images
+	nodes proxmox
+	saferemove 0
+	shared 0
+
+zfspool: media
+	pool media
+	content images,rootdir
+	mountpoint /media
+	nodes proxmedia
+
+
+=== VMs Configuradas ===
+
+=== Contenedores Configurados ===
+VMID       Status     Lock         Name                
+105        stopped                 mediaserver         
+
+=== Usuarios de Proxmox ===
+┌──────────┬─────────┬──────────────────────────┬────────┬────────┬───────────┬────────┬──────┬──────────┬────────────┬──────────────────┬────────┬─────────────┐
+│ userid   │ comment │ email                    │ enable │ expire │ firstname │ groups │ keys │ lastname │ realm-type │ tfa-locked-until │ tokens │ totp-locked │
+╞══════════╪═════════╪══════════════════════════╪════════╪════════╪═══════════╪════════╪══════╪══════════╪════════════╪══════════════════╪════════╪═════════════╡
+│ root@pam │         │ rgutierrez.a@hotmail.com │ 1      │      0 │           │        │      │          │ pam        │                  │        │             │
+└──────────┴─────────┴──────────────────────────┴────────┴────────┴───────────┴────────┴──────┴──────────┴────────────┴──────────────────┴────────┴─────────────┘
+
+=== Configuración de Cluster ===
+Cluster information
+-------------------
+Name:             proxmedia
+Config Version:   4
+Transport:        knet
+Secure auth:      on
+
+Quorum information
+------------------
+Date:             Sun Nov  9 03:32:02 2025
+Quorum provider:  corosync_votequorum
+Nodes:            2
+Node ID:          0x00000002
+Ring ID:          1.5c
+Quorate:          Yes
+
+Votequorum information
+----------------------
+Expected votes:   2
+Highest expected: 2
+Total votes:      2
+Quorum:           2  
+Flags:            Quorate 
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+0x00000001          1 192.168.1.78
+0x00000002          1 192.168.1.82 (local)
+
+=== Nodos del Cluster ===
+
+Membership information
+----------------------
+    Nodeid      Votes Name
+         1          1 proxmox
+         2          1 proxmedia (local)
+
+
+========================================
+RENDIMIENTO DEL SISTEMA
+========================================
+
+=== Benchmark de Proxmox ===
+CPU BOGOMIPS:      41599.84
+REGEX/SECOND:      4016500
+HD SIZE:           38.64 GB (/dev/mapper/pve-root)
+BUFFERED READS:    527.90 MB/sec
+AVERAGE SEEK TIME: 0.06 ms
+FSYNCS/SECOND:     939.55
+DNS EXT:           78.00 ms
+DNS INT:           73.88 ms (disccheep.com)
+
+
+========================================
+SENSORES Y TEMPERATURA
+========================================
+
+lm-sensors no está instalado. Instalar con: apt install lm-sensors && sensors-detect
+
+========================================
+SERVICIOS DE PROXMOX
+========================================
+
+=== Estado de Servicios Proxmox ===
+--- pve-cluster ---
+● pve-cluster.service - The Proxmox VE cluster filesystem
+     Loaded: loaded (/usr/lib/systemd/system/pve-cluster.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:27:57 CST; 4min 23s ago
+ Invocation: adb73e4f05744819ac57809662b8c800
+    Process: 1023 ExecStart=/usr/bin/pmxcfs (code=exited, status=0/SUCCESS)
+
+--- pvedaemon ---
+● pvedaemon.service - PVE API Daemon
+     Loaded: loaded (/usr/lib/systemd/system/pvedaemon.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:27:58 CST; 4min 21s ago
+ Invocation: ae608b799d4b43739efa7e4e4867269f
+    Process: 1213 ExecStart=/usr/bin/pvedaemon start (code=exited, status=0/SUCCESS)
+
+--- pveproxy ---
+● pveproxy.service - PVE API Proxy Server
+     Loaded: loaded (/usr/lib/systemd/system/pveproxy.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:28:03 CST; 4min 17s ago
+ Invocation: 9527e3587920474083a7e1736148466c
+    Process: 1249 ExecStartPre=/usr/bin/pvecm updatecerts --silent (code=exited, status=0/SUCCESS)
+
+--- pvestatd ---
+● pvestatd.service - PVE Status Daemon
+     Loaded: loaded (/usr/lib/systemd/system/pvestatd.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:27:58 CST; 4min 22s ago
+ Invocation: 5405c13c683a4d7e9ddb868254babf6e
+    Process: 1190 ExecStart=/usr/bin/pvestatd start (code=exited, status=0/SUCCESS)
+
+--- pve-firewall ---
+● pve-firewall.service - Proxmox VE firewall
+     Loaded: loaded (/usr/lib/systemd/system/pve-firewall.service; enabled; preset: enabled)
+     Active: active (running) since Sun 2025-11-09 03:27:58 CST; 4min 22s ago
+ Invocation: 3453599e17e14414bae2a7a752c3b4f6
+    Process: 1189 ExecStartPre=/usr/bin/update-alternatives --set ebtables /usr/sbin/ebtables-legacy (code=exited, status=0/SUCCESS)
+
+
+========================================
+REPORTE COMPLETADO
+========================================
+
+Reporte guardado en: /tmp/proxmox-system-info/system-report-20251109_033155.txt
+
+Para copiar el reporte a tu máquina local, usa:
+scp root@192.168.1.82:/tmp/proxmox-system-info/system-report-20251109_033155.txt .
+
